@@ -2,12 +2,12 @@ sudo: required
 services:
   - docker
 before_build:
-  - docker build -t rohail32/client -f Dockerfile.dev .
+  - docker build -t 64c5325dd5d6 -f Dockerfile.dev .
 script:
-  - docker run -e CI=true rohail32/client npm test -- --coverage
+  - docker run -e CI=true 64c5325dd5d6 npm test -- --coverage
 
 after_success:
-  - docker build -t rohail32/client .
+  - docker build -t 64c5325dd5d6 .
   - echo "$DOCKER_PASSWORD" | docker login  --username "$DOCKER_ID" --password-stdin 
-  - docker push rohail32/client
+  - docker push 64c5325dd5d6
 
