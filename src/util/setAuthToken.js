@@ -1,5 +1,4 @@
-import axios from "axios";
-
+const axios=require('axios')
 const setAuthToken = (token) => {
   if (token) {
     axios.defaults.headers.common["x-auth-token"] = token;
