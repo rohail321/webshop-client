@@ -1,0 +1,8 @@
+sudo: required
+services:
+  - docker
+before_build:
+  - docker build -t rohail32/client -f Dockerfile.dev .
+script:
+  - docker run -e CI=true rohail32/client npm test -- --coverage
+
