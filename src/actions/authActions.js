@@ -2,9 +2,9 @@ import {SET_CURRENT_USER,SUCCESSFULL_REGISTER,
     FAILURE_REGISTER,
     ERRORS,AUTH_ERROR, 
     SUCCESSFULL_LOGIN,FAILURE_LOGIN, LOGOUT} from './types'
-import axios from 'axios'
 import setAuthToken from '../util/setAuthToken'
 import {getServer} from '../util'
+import axios from 'axios'
 
 export const setCurrentUser=user=> async dispatch=> {
     if(localStorage.token){
