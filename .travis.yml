@@ -2,12 +2,12 @@ sudo: required
 services:
   - docker
 before_build:
-  - docker build -t 64c5325dd5d6 -f Dockerfile.dev .
+  - docker build -t client-client -f Dockerfile.dev .
 script:
-  - docker run -e CI=true 64c5325dd5d6 npm test -- --coverage
+  - docker run -e CI=true client-client npm test -- --coverage
 
 after_success:
-  - docker build -t 64c5325dd5d6 .
+  - docker build -t client-client .
   - echo "$DOCKER_PASSWORD" | docker login  --username "$DOCKER_ID" --password-stdin 
-  - docker push 64c5325dd5d6
+  - docker push client-client
 
