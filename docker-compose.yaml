@@ -5,7 +5,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - MONGO_URI=${MONGO_URI}
+      - MONGO_URI=mongodb+srv://rohail:nitricacid@ecommerceapp.iyvkf3w.mongodb.net/?retryWrites=true&w=majority
   client:
     build:
       dockerfile: Dockerfile.dev
