@@ -6,3 +6,8 @@ before_build:
 script:
   - docker run -e CI=true rohail32/client npm test -- --coverage
 
+after_sucess:
+  - docker build -t rohail32/client .
+  - echo "$DOCKER_PASSWORD" | docker login  --username "$DOCKER_ID" --password-stdin 
+  - docker push rohail32/client
+
