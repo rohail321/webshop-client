@@ -4,7 +4,6 @@ services:
 before_install:
   - docker build -t rohail32/frontend -f Dockerfile.dev .
 
-
 after_success:
   - docker build -t rohail32/frontend .
   - echo "$DOCKER_PASSWORD" | docker login  --username "$DOCKER_ID" --password-stdin 
