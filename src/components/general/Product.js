@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Button } from "antd";
 import propTypes from "prop-types";
 import { Link } from "react-router-dom";
+import imagee from '../../asset/1.jpg'
 
 const { Meta } = Card;
 
@@ -19,7 +20,7 @@ const Product = ({
         <Card
           hoverable
           style={{ width: 300 }}
-          cover={<img alt="example" src={thumbnail} />}
+          cover={<img alt="example" src={imagee} />}
         >
           <Meta title={product.name} description={description} />
           {showBtn && (

@@ -8,6 +8,7 @@ import { addToCart } from "../../actions/cartActions";
 import { getProfile } from "../../actions/profileActions";
 import Navbar from "../../components/general/Navbar";
 import { decodeUser } from "../../util";
+import imgg from '../../asset/1.jpg'
 
 class productDetails extends Component {
   constructor() {
@@ -30,10 +31,7 @@ class productDetails extends Component {
     if (nextProps && nextProps.product) {
       const product = nextProps.product;
       console.log(product)
-    //   let images = [];
-    //   images.push(product.thumbnail);
-    //   images = [...images, ...product.images];
-    //   this.setState({ product, images });
+  
     this.setState({ product });
 
       if (!this.state.gotProfile) {
@@ -180,24 +178,9 @@ class productDetails extends Component {
                   data-ride="carousel"
                   style={{ width: "500px" }}
                 >
-                  <div className="carousel-inner" role="listbox">
-                    {images.map((image, index) => (
-                      <div
-                        className={
-                          index === 0
-                            ? "carousel-item active"
-                            : "carousel-item "
-                        }
-                        key={index}
-                      >
-                        <img
-                          className="d-block w-100"
-                          src={image}
-                          alt="First slide"
-                        />
-                      </div>
-                    ))}
-                  </div>
+                <div>
+                  <img src={imgg} />
+                </div>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6">
                   <h1 style={{ margin: "0" }}>{product.name}</h1>
@@ -207,7 +190,7 @@ class productDetails extends Component {
                   <p className="lead" style={{ margin: "0" }}>
                     Features:
                   </p>
-                  {product.features ? (
+                  {/* {product.features ? (
                     <ul style={{ marginLeft: "5%", marginTop: "0" }}>
                       {product.features.map((feature, index) => (
                         <li key={index}>{feature}</li>
@@ -215,13 +198,13 @@ class productDetails extends Component {
                     </ul>
                   ) : (
                     <p className="lead">No feature Listed</p>
-                  )}
-                  <Rate
+                  )} */}
+                  {/* <Rate
                     disabled
                     allowHalf
                     defaultValue={product.rating}
                     style={{ margin: "0" }}
-                  />
+                  /> */}
                   <p className="lead" style={{ margin: "0" }}>
                     Quantity: {product.quantity}
                   </p>
@@ -238,7 +221,7 @@ class productDetails extends Component {
               <br />
               <hr />
               <br />
-              <h1>Product Details</h1>
+              {/* <h1>Product Details</h1>
               <p className="lead">
                 <b>{product.details}</b>
               </p>
@@ -253,7 +236,7 @@ class productDetails extends Component {
                 </ul>
               ) : (
                 <p className="lead">No Feature Listed</p>
-              )}
+              )} */}
             </Fragment>
           ) : (
             <Spin size="large" />
